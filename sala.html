@@ -7,25 +7,41 @@
     <title>Document</title>
 
     <style>
-        .controle{
-            background: linear-gradient(90deg, rgba(255,54,54,1) 0%, rgba(153,29,253,1) 50%, rgba(0,146,255,1) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .navbar-brand{
-            margin: 0.3%;
-            font-weight: bolder;
-        }
+      .controle{
+          background: linear-gradient(90deg, rgba(255,54,54,1) 0%, rgba(153,29,253,1) 50%, rgba(0,146,255,1) 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+      }
+      
+      .navbar-brand{
+          margin: 0.3%;
+          font-weight: bolder;
+      }
 
-        .navbar{
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-        }
+      .navbar{
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      }
 
-        .nav-link{
-            margin-bottom: 0;
-        }
-    </style>
+      .nav-link{
+          margin-bottom: 0;
+      }
+
+      body{
+        background-color: rgb(238, 238, 238);
+      }
+
+      .container{
+        background-color: white;
+        border: 2px solid rgb(228, 228, 228);
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5%;
+        padding: 3%;
+      }
+  </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -36,15 +52,30 @@
               <p class="nav-link"><strong>Cadastrar: </strong></p>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Alunos</a>
+              <a class="nav-link" href="aluno.html">Alunos</a>
             </li>
             <p class="nav-link">|</p>
             <li class="nav-item">
-              <a class="nav-link" href="#">Salas</a>
+              <a class="nav-link" href="sala.html">Salas</a>
             </li>
           </ul>
         </div>
     </nav>
+
+    <div class="container">
+    <form action="">
+      <h2>Cadastrar uma nova sala</h2>
+        <div class="mb-3">
+          <label for="exampleInputName1" class="form-label">Nome</label>
+          <input type="text" class="form-control" id="exampleInputName1" aria-describedby="NameHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputAge1" class="form-label">Idade</label>
+          <input type="number" class="form-control" id="exampleInputAge1" aria-describedby="AgeHelp">
+        </div>
+      <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+  </div>
 
     <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
