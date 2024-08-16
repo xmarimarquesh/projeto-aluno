@@ -1,0 +1,66 @@
+.controle{
+    background: linear-gradient(90deg, rgba(255,54,54,1) 0%, rgba(153,29,253,1) 50%, rgba(0,146,255,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navbar-brand{
+    margin: 0.3%;
+    font-weight: bolder;
+}
+
+.navbar{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.nav-link{
+    margin-bottom: 0;
+}
+
+body{
+  background-color: rgb(238, 238, 238);
+}
+
+.container{
+  background-color: white;
+  border: 2px solid rgb(228, 228, 228);
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+  padding: 3%;
+}
+
+.profile{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+  margin-bottom: 5%
+}
+
+.profile img{
+  border: 2px solid black;
+  border-radius: 100%;
+  cursor: pointer;
+  width: 128px;
+  height: 128px;
+  object-fit: cover;
+}
+
+.profile input{
+  display: none;
+}
+
+footer{
+  margin-top: 4%;
+  padding: 1%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+footer img{
+  width: 0.9%;
+}

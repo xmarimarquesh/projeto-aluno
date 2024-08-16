@@ -1,0 +1,96 @@
+.controle{
+    background: linear-gradient(90deg, rgba(255,54,54,1) 0%, rgba(153,29,253,1) 50%, rgba(0,146,255,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body{
+  background-color: rgb(238, 238, 238);
+}
+
+
+.navbar-brand{
+    margin: 0.15%;
+    font-weight: bolder;
+}
+
+.navbar{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.nav-link{
+    margin-bottom: 0;
+}
+
+label{
+    margin-right: 1%;
+}
+
+.drop{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
+    margin-bottom: 0 !important;
+}
+
+.alunos img{
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 100%;
+    border: 2px solid black;
+    margin-top: 4%;
+}
+
+.aluno{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-body button{
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(110, 110, 110);
+    color: white;
+    padding: 10%;
+}
+
+.form-select{
+    width: 10%;
+    margin: 3% 3% 3% 0;
+}
+
+.form-label{
+    margin-bottom: 0;
+}
+
+.container h1{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1%;
+}
+
+.container{
+  margin-top: 0;
+}
+
+footer{
+  margin-top: 4%;
+  padding: 1%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+footer img{
+  width: 0.9%;
+}

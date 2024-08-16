@@ -4,101 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
     <title>Controle de Estudantes</title>
 
-    <style>
-        .controle{
-            background: linear-gradient(90deg, rgba(255,54,54,1) 0%, rgba(153,29,253,1) 50%, rgba(0,146,255,1) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        body{
-          background-color: rgb(238, 238, 238);
-        }
-  
-        
-        .navbar-brand{
-            margin: 0.3%;
-            font-weight: bolder;
-        }
-
-        .navbar{
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-        }
-
-        .nav-link{
-            margin-bottom: 0;
-        }
-
-        label{
-            margin-right: 1%;
-        }
-
-        .drop{
-            display: flex;
-            align-items: center;
-            justify-content: end;
-            width: 100%;
-        }
-
-        .alunos img{
-            width: 120px;
-            height: 120px;
-            object-fit: cover;
-            border-radius: 100%;
-            border: 2px solid black;
-            margin-top: 4%;
-        }
-
-        .aluno{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .card-body{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .card-body button{
-            border: none;
-            border-radius: 10px;
-            background-color: rgb(110, 110, 110);
-            color: white;
-            padding: 10%;
-        }
-
-        .form-select{
-            width: 10%;
-            margin: 3% 3% 3% 0;
-        }
-
-        .form-label{
-            margin-bottom: 0;
-        }
-
-    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand controle" href="index.html">CONTROLE</a><a class="navbar-brand" href="index.html">de Estudantes</a>
+          <a class="navbar-brand controle" href="index.ejs">CONTROLE</a><a class="navbar-brand" href="index.ejs">de Estudantes</a>
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <p class="nav-link"><strong>Cadastrar: </strong></p>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="aluno.html">Alunos</a>
+              <a class="nav-link" href="cadastroAluno.ejs">Alunos</a>
             </li>
             <p class="nav-link">|</p>
             <li class="nav-item">
-              <a class="nav-link" href="sala.html">Salas</a>
-            </li>
+              <a class="nav-link" href="/cadastroSala">Salas</a>
+            </li> 
           </ul>
         </div>
     </nav>
@@ -114,6 +38,7 @@
     </div>
 
     <div class="container">
+      <h1>Alunos</h1>
     <div class="row row-cols-1 row-cols-md-3 g-4 alunos">
         <div class="col">
           <div class="aluno card h-100">
@@ -158,6 +83,12 @@
       </div>
       </div>
 
+      <footer>
+        <a class="navbar-brand" href="index.html">Robert</a><a class="navbar-brand controle" href="index.html">Bosch</a><a class="navbar-brand" href="index.html">LTDA</a>
+        <img src="https://cdn-icons-png.flaticon.com/256/3513/3513164.png" alt="">
+      </footer>
+
+    <script src="js/script.js"></script>
     <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
