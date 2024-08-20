@@ -10,17 +10,17 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand controle" href="index.ejs">CONTROLE</a><a class="navbar-brand" href="index.ejs">de Estudantes</a>
+          <a class="navbar-brand controle" href="/index">CONTROLE</a><a class="navbar-brand" href="/index">de Estudantes</a>
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <p class="nav-link"><strong>Cadastrar: </strong></p>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="cadastroAluno.ejs">Alunos</a>
+              <a class="nav-link" href="/cadastroAluno">Alunos</a>
             </li>
             <p class="nav-link">|</p>
             <li class="nav-item">
-              <a class="nav-link" href="cadastroSala.ejs">Salas</a>
+              <a class="nav-link" href="/cadastroSala">Salas</a>
             </li>
           </ul>
         </div>
@@ -31,11 +31,11 @@
       <h2>Cadastrar uma nova sala</h2>
         <div class="mb-3">
           <label for="exampleInputName1" class="form-label">Nome</label>
-          <input type="text" class="form-control" id="exampleInputName1" aria-describedby="NameHelp">
+          <input type="text" class="form-control" id="exampleInputName1" aria-describedby="NameHelp" name="nome">
         </div>
         <div class="mb-3">
-          <label for="exampleInputAge1" class="form-label">Idade</label>
-          <input type="number" class="form-control" id="exampleInputAge1" aria-describedby="AgeHelp">
+          <label for="exampleInputAge1" class="form-label">Capacidade</label>
+          <input type="number" class="form-control" id="exampleInputAge1" aria-describedby="AgeHelp" name="capacidade">
         </div>
       <button type="submit" class="btn btn-primary">Cadastrar</button>
     </form>

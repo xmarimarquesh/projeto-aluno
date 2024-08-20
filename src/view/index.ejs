@@ -1,94 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/index.css">
-    <title>Controle de Estudantes</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <title>Controle de Estudantes</title>
 
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand controle" href="index.ejs">CONTROLE</a><a class="navbar-brand" href="index.ejs">de Estudantes</a>
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <p class="nav-link"><strong>Cadastrar: </strong></p>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="cadastroAluno.ejs">Alunos</a>
-            </li>
-            <p class="nav-link">|</p>
-            <li class="nav-item">
-              <a class="nav-link" href="/cadastroSala">Salas</a>
-            </li> 
-          </ul>
-        </div>
-    </nav>
-
-    <div class="drop mb-3">
-        <label for="disabledSelect" class="form-label">Sala de Aula:</label>
-        <select id="disabledSelect" class="form-select">
-            <option selected value="0">TI</option>
-            <option value="1">Cibersistemas</option>
-            <option value="2">Manufatura</option>
-            <option value="3">Mecatrônica</option>
-        </select>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand controle" href="/index">CONTROLE</a><a class="navbar-brand" href="/index">de Estudantes</a>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <p class="nav-link"><strong>Cadastrar: </strong></p>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cadastroAluno">Alunos</a>
+        </li>
+        <p class="nav-link">|</p>
+        <li class="nav-item">
+          <a class="nav-link" href="/cadastroSala">Salas</a>
+        </li>
+      </ul>
     </div>
+  </nav>
 
-    <div class="container">
-      <h1>Alunos</h1>
+  <form action="/" method="post">
+    <div class="drop mb-3">
+      <label for="disabledSelect" class="form-label">Sala de Aula:</label>
+      <select id="sala disabledSelect" onchange="this.form.submit()" name="nome" class="form-select">
+        <option disabled >Selecione uma sala</option>
+        <% for (let i=0; i<salas.length; i++) { %>
+          <option value='<%= salas[i].IDSala %>'>
+            <%= salas[i].Nome %>
+          </option>
+          <% } %>
+      </select>
+    </div>
+  </form>
+
+  <div class="container">
+    <h1>Alunos</h1>
     <div class="row row-cols-1 row-cols-md-3 g-4 alunos">
+      <% for (let i=0; i<alunos.length; i++) { %>
         <div class="col">
-          <div class="aluno card h-100">
-            <img src="img/eu.jpeg" class="card-img-top" alt="...">
+          <div class="card h-100">
+            <img src="img/<%= alunos[i].Foto %>" class="card-img-top" alt="Foto aluno">
             <div class="card-body">
-              <h5 class="card-title">Mariana</h5>
-              <p class="card-text">Idade: 18</p>
-              <button>Editar</button>
+              <h5 class="card-title">
+                <%= alunos[i].Nome %>
+              </h5>
+              <p class="card-text">Idade: <%= alunos[i].Idade %>
+              </p>
+              <form action="/editarAluno/<%= alunos[i].IDAluno %>" method="get">
+                <button type="submit" class="btn btn-secondary">Editar</button>
+              </form>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="aluno card h-100">
-            <img src="img/helena.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Helena</h5>
-              <p class="card-text">Idade: 18</p>
-              <button>Editar</button>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="aluno card h-100">
-            <img src="img/ingrid.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Ingrid</h5>
-              <p class="card-text">Idade: 19</p>
-              <button>Editar</button>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="aluno card h-100">
-            <img src="img/juliana.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Juliana</h5>
-              <p class="card-text">Idade: 21</p>
-              <button>Editar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
+        <% } %>
 
-      <footer>
-        <a class="navbar-brand" href="index.html">Robert</a><a class="navbar-brand controle" href="index.html">Bosch</a><a class="navbar-brand" href="index.html">LTDA</a>
-        <img src="https://cdn-icons-png.flaticon.com/256/3513/3513164.png" alt="">
-      </footer>
+    </div>
+  </div>
+
+    <footer>
+      <a class="navbar-brand" href="index.html">Robert</a><a class="navbar-brand controle" href="index.html">Bosch</a><a
+        class="navbar-brand" href="index.html">LTDA</a>
+      <img src="https://cdn-icons-png.flaticon.com/256/3513/3513164.png" alt="">
+    </footer>
 
     <script src="js/script.js"></script>
     <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

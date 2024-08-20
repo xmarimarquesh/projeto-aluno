@@ -1,5 +1,6 @@
 const sequelize = require('sequelize');
 const database = require('../config/db');
+const sala = require('../model/sala');
 
 const aluno = database.define('Aluno', {
     IDAluno: {
@@ -28,6 +29,11 @@ const aluno = database.define('Aluno', {
         type: sequelize.STRING(50),
         allowNull: false
     }
+});
+
+aluno.belongsTo(sala, {
+    constraint: true, //Garantir integridade referencial
+    foreignKey: 'IDSala'
 });
 
 module.exports = aluno;
