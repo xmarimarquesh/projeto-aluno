@@ -6,6 +6,10 @@
 
 body{
   background-color: rgb(238, 238, 238);
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 
@@ -34,7 +38,7 @@ label{
     margin-bottom: 0 !important;
 }
 
-.alunos img{
+.aluno img{
     width: 120px;
     height: 120px;
     object-fit: cover;

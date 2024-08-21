@@ -11,6 +11,7 @@
 </head>
 
 <body>
+  <div>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand controle" href="/index">CONTROLE</a><a class="navbar-brand" href="/index">de Estudantes</a>
@@ -33,13 +34,14 @@
     <div class="drop mb-3">
       <label for="disabledSelect" class="form-label">Sala de Aula:</label>
       <select id="sala disabledSelect" onchange="this.form.submit()" name="nome" class="form-select">
-        <option disabled >Selecione uma sala</option>
+        <option>Selecione uma sala</option>
         <% for (let i=0; i<salas.length; i++) { %>
           <option value='<%= salas[i].IDSala %>'>
             <%= salas[i].Nome %>
           </option>
           <% } %>
       </select>
+      <button type="submit" class="btn btn-secondary" href="/editarSala">Editar Sala</button>
     </div>
   </form>
 
@@ -48,7 +50,7 @@
     <div class="row row-cols-1 row-cols-md-3 g-4 alunos">
       <% for (let i=0; i<alunos.length; i++) { %>
         <div class="col">
-          <div class="card h-100">
+          <div class="card h-100 aluno">
             <img src="img/<%= alunos[i].Foto %>" class="card-img-top" alt="Foto aluno">
             <div class="card-body">
               <h5 class="card-title">
@@ -57,7 +59,7 @@
               <p class="card-text">Idade: <%= alunos[i].Idade %>
               </p>
               <form action="/editarAluno/<%= alunos[i].IDAluno %>" method="get">
-                <button type="submit" class="btn btn-secondary">Editar</button>
+                <button type="submit" class="btn btn-secondary" href="/editarAluno">Editar</button>
               </form>
             </div>
           </div>
@@ -66,6 +68,7 @@
 
     </div>
   </div>
+</div>
 
     <footer>
       <a class="navbar-brand" href="index.html">Robert</a><a class="navbar-brand controle" href="index.html">Bosch</a><a

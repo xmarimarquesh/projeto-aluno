@@ -2,32 +2,32 @@ const sequelize = require('sequelize');
 const database = require('../config/db');
 const sala = require('../model/sala');
 
-const aluno = database.define('Aluno', {
+const aluno = database.define('Alunos', {
     IDAluno: {
         type: sequelize.INTEGER,
         autoIncrement: true,
-        allowNull: false,
+        allowNull: true,
         primaryKey: true
     },
 
     Nome: {
         type: sequelize.STRING(100),
-        allowNull: false
+        allowNull: true
     },
 
     Idade: {
         type: sequelize.INTEGER,
-        allowNull: false
+        allowNull: true
     },
 
     Sexo: {
         type: sequelize.STRING(20),
-        allowNull: false
+        allowNull: true
     },
 
     Foto: {
         type: sequelize.STRING(50),
-        allowNull: false
+        allowNull: true
     }
 });
 

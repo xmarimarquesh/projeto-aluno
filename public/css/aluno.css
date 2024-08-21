@@ -24,7 +24,7 @@ body{
 .container{
   background-color: white;
   border: 2px solid rgb(228, 228, 228);
-  width: 30%;
+  width: 30% !important;
   display: flex;
   flex-direction: column;
   justify-content: center;
