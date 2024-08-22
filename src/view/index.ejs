@@ -29,19 +29,18 @@
       </ul>
     </div>
   </nav>
-
+  <%=ID%>
   <form action="/" method="post">
     <div class="drop mb-3">
       <label for="disabledSelect" class="form-label">Sala de Aula:</label>
-      <select id="sala disabledSelect" onchange="this.form.submit()" name="nome" class="form-select">
+      <select id="sala" onchange="this.form.submit()" name="nome" class="form-select">
         <option>Selecione uma sala</option>
         <% for (let i=0; i<salas.length; i++) { %>
-          <option value='<%= salas[i].IDSala %>'>
-            <%= salas[i].Nome %>
+          <option value='<%= salas[i].IDSala %>' <%= ID == salas[i].IDSala ? 'selected' : ''%>> <%= salas[i].Nome %> 
           </option>
           <% } %>
       </select>
-      <button type="submit" class="btn btn-secondary" href="/editarSala">Editar Sala</button>
+        <a class="btn btn-secondary" href="/editarSala/<%=ID%>">Editar Sala</a>
     </div>
   </form>
 

@@ -10,24 +10,24 @@ module.exports = {
             attributes: ['IDSala', 'Nome']
         });
 
-        res.render('../view/index', {salas, alunos: '', id: ''});
+        res.render('../view/index', {salas, alunos: '', ID: ''});
     },
     
     async pagInicialPost(req, res){
 
-        const id = req.body.nome;
-
+        const ID = req.body.nome;
+        console.log(ID)
         const alunos = await aluno.findAll({
             raw: true,
             attributes: ['IDAluno', 'Nome', 'Idade', 'Foto'],
-            where: { IDSala: id }   
+            where: { IDSala: ID }   
         });
 
         const salas = await sala.findAll({ 
             raw: true, 
             attributes: ['IDSala', 'Nome'] 
         });
-
-        res.render('../view/index', {salas, alunos, id});
+        
+        res.render('../view/index', {salas, alunos, ID});
     }
 }

@@ -1,11 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/sala.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <title>Editar Sala</title>
 </head>
+
 <body>
-    <h2>Editar</h2>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand controle" href="/index">CONTROLE</a><a class="navbar-brand" href="/index">de
+                Estudantes</a>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <p class="nav-link"><strong>Cadastrar: </strong></p>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/cadastroAluno">Alunos</a>
+                </li>
+                <p class="nav-link">|</p>
+                <li class="nav-item">
+                    <a class="nav-link" href="/cadastroSala">Salas</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="edit-box container">
+        <form action="/editarSala/<%=salas.IDSala%>" method="post">
+            <h2>Editar informações da Sala</h2>
+            <div class="mb-3"> 
+                <label for="exampleInputName1" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="exampleInputName1" aria-describedby="NameHelp" name="nome"  value="<%= salas.Nome %>">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputAge1" class="form-label">Capacidade</label>
+                <input type="number" class="form-control" id="exampleInputAge1" aria-describedby="AgeHelp"  value="<%= salas.Capacidade %>" name="capacidade">
+            </div>
+            <button type="submit" class="btn btn-primary">Atualizar</button>
+        </form>
+    </div>
+
+    <footer>
+        <a class="navbar-brand">Robert</a><a class="navbar-brand controle">Bosch</a><a class="navbar-brand"
+            href="index.ejs">LTDA</a>
+        <img src="https://cdn-icons-png.flaticon.com/256/3513/3513164.png" alt="">
+    </footer>
+
 </body>
+
 </html>

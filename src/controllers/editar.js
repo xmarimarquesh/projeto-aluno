@@ -1,7 +1,20 @@
 const sala = require('../model/sala');
 const aluno = require('../model/aluno');
+const fs = require('fs');
 
 module.exports = {
+    async salas(req, res) {
+        // Recebendo o id da URL
+        const parametro = req.params.id;
+
+        const salas = await aluno.findByPk(parametro, {
+            raw: true,
+            attributes: ['IDSala', 'Nome']
+        });
+
+        res.render('../view/editarSala', { salas });
+    },
+
     async alunos(req, res) {
         // Recebendo o id da URL
         const parametro = req.params.id;
@@ -19,9 +32,6 @@ module.exports = {
         res.render('../view/editarAluno', { salas, alunos });
     },
 
-    async salas(req, res) {
-        
-    },
 
     async atualizarAluno(req, res) {
         const dados = req.body;
@@ -38,7 +48,7 @@ module.exports = {
             });
 
             // Excluindo a foto da pasta
-            if (antigaFoto[0].Foto != 'usuario.png') fs.unlink(`public/img/${antigaFoto[0].Foto}`, ( err => { if(err) console.log(err); } ));
+            if (antigaFoto[0].Foto != 'usuario.png') fs.unlink(`../public/img/${antigaFoto[0].Foto}`, ( err => { if(err) console.log(err); } ));
 
             // Update da nova foto no DB
             await aluno.update(
@@ -56,6 +66,22 @@ module.exports = {
         },
             {
                 where: { IDAluno: id }
+            });
+
+        res.redirect('/');
+    },
+
+    async atualizarSala(req, res) {
+        const dados = req.body;
+        const id = req.params.id;
+
+        // Dando upgrade nas novas informações
+        await sala.update({
+            Nome: dados.nome,
+            Capacidade: dados.capacidade
+        },
+            {
+                where: { IDSala: id }
             });
 
         res.redirect('/');

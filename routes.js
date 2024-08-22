@@ -25,5 +25,6 @@ route.get('/editarAluno/:id', editar.alunos);
 route.post('/editarAluno/:id', multer(config).single('foto'), editar.atualizarAluno);
 
 route.get('/editarSala/:id', editar.salas);
+route.post('/editarSala/:id', editar.atualizarSala);
 
 module.exports = route;
